@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV & Lampiran Lamaran | Diyas — Head of NOC Applicant · PT VTNET</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@500;600;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="theme-dark">
+
+    <!-- Interactive Cursor Glow Spotlight -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Ambient Glowing Background Orbs -->
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+    <canvas id="ambientCanvas"></canvas>
+
+    <!-- Floating Top Bar -->
+    <header class="top-bar-wrapper">
+        <div class="top-bar glass-card spotlight-card">
+            <div class="brand">
+                <span class="brand-badge pulse-element"><i class="fa-solid fa-network-wired"></i></span>
+                <span class="brand-name">Diyas<span class="highlight">.noc</span></span>
+                <span class="status-pill"><span class="status-dot"></span> Head of NOC Applicant &bull; PT VTNET</span>
+            </div>
+
+            <!-- View Switcher Tabs -->
+            <div class="nav-switch-tabs print-hide">
+                <button class="nav-tab-btn active" data-tab="tab-cv">
+                    <i class="fa-solid fa-id-card"></i>
+                    <span>Curriculum Vitae</span>
+                </button>
+                <button class="nav-tab-btn" data-tab="tab-lampiran">
+                    <i class="fa-solid fa-file-signature"></i>
+                    <span>Lampiran</span>
+                </button>
+            </div>
+
+            <div class="top-actions">
+                <button id="themeToggleBtn" class="icon-btn" title="Ganti Mode Gelap / Terang">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button id="btnShare" class="icon-btn" title="Salin Tautan">
+                    <i class="fa-solid fa-share-nodes"></i>
+                </button>
+                <button onclick="window.print()" class="btn btn-primary btn-sm btn-glow" title="Cetak / Simpan PDF">
+                    <i class="fa-solid fa-print"></i>
+                    <span>Cetak PDF</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="cv-container">
+
+        <!-- =================================================================
+             SECTION 1: CURRICULUM VITAE (CV RESMI DIYAS) — DEFAULT ACTIVE
+             ================================================================= -->
+        <section id="tab-cv" class="tab-pane active">
+
+            <!-- Hero Section Profil -->
+            <section class="profile-hero glass-card spotlight-card border-gradient tilt-card" id="heroCard">
+                <div class="hero-left">
+                    <div class="avatar-wrapper">
+                        <div class="avatar-ring"></div>
+                        <div class="avatar-core">
+                            <img src="foto-diyas.jpg" alt="Foto Diyas" class="avatar-img">
+                        </div>
+                        <span class="rank-badge shimmer-badge" title="Prestasi Akademik Terbaik">
+                            <i class="fa-solid fa-crown fa-bounce"></i> Juara 1
+                        </span>
+                    </div>
+                </div>
+
+                <div class="hero-body">
+                    <div class="tag-row">
+                        <span class="chip chip-net float-chip-1"><i class="fa-solid fa-network-wired"></i> Setting &amp; Konfigurasi ONT</span>
+                        <span class="chip chip-ai float-chip-2"><i class="fa-solid fa-microchip"></i> Paham AI Certified</span>
+                        <span class="chip chip-lead float-chip-3"><i class="fa-solid fa-users"></i> Eks Waka OSIS SMKN Batujaya</span>
+                        <span class="chip chip-chess float-chip-4"><i class="fa-solid fa-chess-knight"></i> Strategi Catur</span>
+                    </div>
+
+                    <h1 class="profile-name">
+                        Diyas <span class="badge-verified" title="Profil Terverifikasi"><i class="fa-solid fa-circle-check"></i></span>
+                    </h1>
+                    <p class="profile-tagline">Pelamar Head of NOC &bull; PT VTNET &bull; Siswa SMKN Batujaya</p>
+
+                    <p class="profile-bio">
+                        Pelajar SMK dengan determinasi tinggi, berkarakter <strong>fast learner</strong>, sangat tanggap dalam pemecahan masalah jaringan (<em>problem solving</em>), dan memiliki pengalaman kepemimpinan organisasi nyata. Berkomitmen menjaga stabilitas dan efisiensi operasional jaringan serta berambisi mencapai <em>financial freedom</em> lewat ekosistem bisnis otomasi Local LLM mandiri.
+                    </p>
+
+                    <div class="contact-strip">
+                        <span class="clickable-contact" id="copyEmailBtn" title="Klik untuk menyalin email">
+                            <i class="fa-solid fa-envelope"></i> diyasnugrahs@gmail.com
+                            <i class="fa-regular fa-copy copy-hint"></i>
+                        </span>
+                        <span><i class="fa-solid fa-location-dot"></i> Batujaya, Indonesia</span>
+                        <span><i class="fa-solid fa-school"></i> SMKN Batujaya &bull; Siswa Aktif</span>
+                        <span><i class="fa-solid fa-fire fire-glow"></i> Ambisi: <strong>100% Penuh</strong></span>
+                    </div>
+                </div>
+
+                <!-- Stat Counters -->
+                <div class="hero-stats-panel">
+                    <div class="mini-stat stat-hover">
+                        <div class="stat-val-wrap">
+                            <span class="stat-prefix">#</span><span class="counter" data-target="1">0</span>
+                        </div>
+                        <span class="stat-lbl">Ranking 1 (Sem. 1 &amp; 2)</span>
+                    </div>
+                    <div class="mini-stat stat-hover">
+                        <div class="stat-val-wrap">
+                            <span class="counter" data-target="99">0</span><span class="stat-suffix">.9%</span>
+                        </div>
+                        <span class="stat-lbl">Target Uptime Jaringan</span>
+                    </div>
+                    <div class="mini-stat stat-hover">
+                        <div class="stat-val-wrap">
+                            <span class="counter" data-target="100">0</span><span class="stat-suffix">%</span>
+                        </div>
+                        <span class="stat-lbl">Dedikasi &amp; Ambisi</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2-Column CV Layout -->
+            <div class="cv-layout-grid">
+
+                <!-- Kolom Kiri -->
+                <aside class="col-left">
+
+                    <!-- Keahlian Teknis NOC -->
+                    <div class="info-card glass-card spotlight-card tilt-card">
+                        <h3 class="card-title">
+                            <i class="fa-solid fa-screwdriver-wrench"></i> Keahlian Teknis NOC
+                        </h3>
+
+                        <div class="skill-group">
+                            <div class="skill-head">
+                                <span><i class="fa-solid fa-network-wired color-net"></i> Setting &amp; Konfigurasi ONT</span>
+                                <span class="skill-pct font-mono"><span class="counter" data-target="92">0</span>%</span>
+                            </div>
+                            <p class="skill-detail">Konfigurasi Optical Network Terminal (Fiber Optic, PPPoE, Bridge Mode, VLAN, &amp; Optimasi WiFi Router).</p>
+                            <div class="bar-bg"><div class="bar-fill animated-bar" data-width="92%"></div></div>
+                        </div>
+
+                        <div class="skill-group">
+                            <div class="skill-head">
+                                <span><i class="fa-solid fa-brain color-ai"></i> Paham AI &amp; Local LLM</span>
+                                <span class="skill-pct font-mono"><span class="counter" data-target="88">0</span>%</span>
+                            </div>
+                            <p class="skill-detail">Lulus bersertifikat resmi "Paham AI". Memahami konsep prompt engineering, pemanfaatan Local LLM, dan automasi monitoring AI.</p>
+                            <div class="bar-bg"><div class="bar-fill animated-bar" data-width="88%"></div></div>
+                        </div>
+
+                        <div class="skill-group">
+                            <div class="skill-head">
+                                <span><i class="fa-solid fa-bolt color-fast"></i> Fast Learning &amp; Daya Tanggap</span>
+                                <span class="skill-pct font-mono"><span class="counter" data-target="98">0</span>%</span>
+                            </div>
+                            <p class="skill-detail">Sangat cepat menangkap konsep baru, adaptif dan solutif terhadap teknologi yang belum pernah dipelajari sebelumnya.</p>
+                            <div class="bar-bg"><div class="bar-fill animated-bar" data-width="98%"></div></div>
+                        </div>
+                    </div>
+
+                    <!-- Softskills -->
+                    <div class="info-card glass-card spotlight-card tilt-card">
+                        <h3 class="card-title">
+                            <i class="fa-solid fa-comments"></i> Soft Skills Kepemimpinan
+                        </h3>
+                        <ul class="softskills-list">
+                            <li class="softskill-item">
+                                <div class="icon-circle"><i class="fa-solid fa-bullhorn"></i></div>
+                                <div>
+                                    <strong>Public Speaking &amp; Koordinasi</strong>
+                                    <p>Terlatih memimpin forum besar, memandu apel sekolah, dan mengarahkan rapat saat menjabat pimpinan OSIS.</p>
+                                </div>
+                            </li>
+                            <li class="softskill-item">
+                                <div class="icon-circle"><i class="fa-solid fa-lightbulb"></i></div>
+                                <div>
+                                    <strong>Critical Thinking &amp; Problem Solving</strong>
+                                    <p>Menganalisis akar permasalahan teknis maupun operasional secara logis dan menyusun solusi terarah.</p>
+                                </div>
+                            </li>
+                            <li class="softskill-item">
+                                <div class="icon-circle"><i class="fa-solid fa-users-gear"></i></div>
+                                <div>
+                                    <strong>Leadership &amp; Incident Management</strong>
+                                    <p>Mengoordinasikan tim operasional, delegasi tanggung jawab, dan menjaga dinamika keharmonisan kerja.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Catur & Strategi -->
+                    <div class="info-card glass-card spotlight-card tilt-card">
+                        <h3 class="card-title">
+                            <i class="fa-solid fa-chess"></i> Karakter &amp; Strategi
+                        </h3>
+                        <div class="chess-highlight card-interactive">
+                            <div class="chess-icon"><i class="fa-solid fa-chess-queen float-chess"></i></div>
+                            <div class="chess-text">
+                                <strong>Pemain Catur Aktif</strong>
+                                <p>Melatih kalkulasi beberapa langkah ke depan, kedisiplinan mental, kesabaran, dan manajemen risiko taktis.</p>
+                                <span class="chess-badge shimmer-badge"><i class="fa-solid fa-medal"></i> Finalis Lomba Catur OSIS SMKN Batujaya</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </aside>
+
+                <!-- Kolom Kanan -->
+                <section class="col-right">
+
+                    <!-- Riwayat Pendidikan -->
+                    <div class="info-card glass-card spotlight-card tilt-card">
+                        <h3 class="card-title">
+                            <i class="fa-solid fa-graduation-cap"></i> Riwayat Pendidikan &amp; Prestasi
+                        </h3>
+
+                        <div class="timeline-box">
+                            <!-- SMKN Batujaya -->
+                            <div class="timeline-node timeline-active">
+                                <div class="node-dot dot-glow"></div>
+                                <div class="node-main">
+                                    <div class="node-header">
+                                        <h4>SMKN Batujaya</h4>
+                                        <span class="date-badge"><span class="badge-dot"></span> Saat ini &bull; Siswa Aktif</span>
+                                    </div>
+                                    <p class="node-role">Siswa Berprestasi Akademik Utama</p>
+                                    <div class="achievement-pill gold-glow">
+                                        <i class="fa-solid fa-trophy fa-beat-fade"></i>
+                                        <strong>Juara / Ranking 1 Berturut-turut di Semester 1 &amp; Semester 2</strong>
+                                    </div>
+                                    <p class="node-desc">
+                                        Mempertahankan konsistensi nilai tertinggi di kelas berkat kedisiplinan belajar mandiri, kemampuan memahami materi dengan cepat, dan keaktifan di ruang belajar.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- MTs Mathla'ul Anwar -->
+                            <div class="timeline-node">
+                                <div class="node-dot"></div>
+                                <div class="node-main">
+                                    <div class="node-header">
+                                        <h4>MTs Mathla'ul Anwar</h4>
+                                        <span class="date-badge">Lulus &bull; Menengah Pertama</span>
+                                    </div>
+                                    <p class="node-role">Alumni Berprestasi</p>
+                                    <p class="node-desc">
+                                        Membangun fondasi logika berpikir, kedisiplinan berorganisasi, serta awal mula mengasah minat tinggi terhadap dunia teknologi dan kepemimpinan.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- SDN Karyabakti 4 -->
+                            <div class="timeline-node">
+                                <div class="node-dot"></div>
+                                <div class="node-main">
+                                    <div class="node-header">
+                                        <h4>SDN Karyabakti 4</h4>
+                                        <span class="date-badge">Lulus &bull; Pendidikan Dasar</span>
+                                    </div>
+                                    <p class="node-role">Alumni</p>
+                                    <p class="node-desc">
+                                        Menyelesaikan pendidikan tingkat dasar dengan rekam jejak belajar yang konsisten dan aktif dalam berbagai kegiatan belajar mengajar.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kepemimpinan OSIS -->
+                    <div class="info-card glass-card spotlight-card tilt-card">
+                        <h3 class="card-title">
+                            <i class="fa-solid fa-sitemap"></i> Pengalaman Organisasi &amp; Kepemimpinan
+                        </h3>
+
+                        <div class="timeline-box">
+                            <div class="timeline-node">
+                                <div class="node-dot lead-dot"></div>
+                                <div class="node-main">
+                                    <div class="node-header">
+                                        <h4>OSIS SMKN Batujaya</h4>
+                                        <span class="date-badge">Periode Kepengurusan</span>
+                                    </div>
+                                    <p class="node-role">Mantan Wakil Ketua OSIS</p>
+                                    <ul class="bullet-points">
+                                        <li>Membantu memimpin jalannya seluruh program kerja OSIS di lingkungan SMKN Batujaya bersama Ketua OSIS.</li>
+                                        <li>Menjadi inisiator dan pelaksana berbagai kegiatan sekolah, termasuk penyelenggaraan <strong>Turnamen Catur SMKN Batujaya</strong>.</li>
+                                        <li>Menjadi jembatan komunikasi yang efektif antara pihak guru, kepala sekolah, dan seluruh siswa.</li>
+                                        <li>Mengasah kemampuan <em>public speaking</em> saat memimpin apel, memandu rapat pengurus, dan evaluasi kegiatan.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sertifikat Paham AI -->
+                    <div class="info-card glass-card spotlight-card tilt-card">
+                        <h3 class="card-title">
+                            <i class="fa-solid fa-certificate"></i> Sertifikasi Resmi
+                        </h3>
+
+                        <div class="cert-card cert-interactive">
+                            <div class="cert-badge-icon pulse-element"><i class="fa-solid fa-award"></i></div>
+                            <div class="cert-info">
+                                <h4>Sertifikat Program "Paham AI"</h4>
+                                <p class="cert-desc">
+                                    Memvalidasi pemahaman komprehensif mengenai konsep Artificial Intelligence, fondasi Large Language Model (LLM), prompt engineering, dan pemanfaatan alat AI untuk akselerasi produktivitas serta pemantauan sistem jaringan.
+                                </p>
+                                <span class="cert-status"><i class="fa-solid fa-circle-check"></i> Sertifikat Resmi Terverifikasi</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rencana 10 Tahun -->
+                    <div class="info-card glass-card spotlight-card vision-card tilt-card">
+                        <h3 class="card-title">
+                            <i class="fa-solid fa-compass"></i> Visi &amp; Rencana 10 Tahun ke Depan
+                        </h3>
+                        <div class="vision-content">
+                            <div class="vision-quote quote-glow">
+                                <i class="fa-solid fa-quote-left quote-icon"></i>
+                                <p>
+                                    <strong>Target Utama: Financial Freedom</strong> melalui pembangunan ekosistem bisnis mandiri berbasis sistem automasi <strong>Local LLM</strong> yang dapat melayani secara berkelanjutan dan mandiri.
+                                </p>
+                            </div>
+                            <p class="vision-desc">
+                                Sebagai anak SMK yang haus akan ilmu baru, setiap waktu saya dedikasikan untuk mengasah kemampuan teknis jaringan NOC, kepemimpinan, dan kecerdasan buatan. Ambisi 100% adalah bahan bakar utama saya.
+                            </p>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+
+        </section>
+
+        <!-- =================================================================
+             SECTION 2: LAMPIRAN FORMAL (SURAT LAMARAN & CV DESAIN DIYAS)
+             ================================================================= -->
+        <section id="tab-lampiran" class="tab-pane">
+
+            <!-- Wrapper frame lampiran -->
+            <div class="lampiran-frame-wrapper glass-card spotlight-card border-gradient">
+
+                <!-- Mini toolbar atas frame -->
+                <div class="lampiran-toolbar">
+                    <div class="toolbar-left">
+                        <span class="lamp-frame-badge"><i class="fa-solid fa-file-pdf" style="color:#ef4444"></i> surat-lamaran.pdf / .jpg</span>
+                        <span class="lamp-frame-status">
+                            <span class="status-dot"></span> Dokumen Resmi Siap
+                        </span>
+                    </div>
+                    <div class="toolbar-right">
+                        <a href="lampiran/surat-lamaran.pdf" target="_blank" class="btn btn-sm btn-outline" title="Buka Dokumen PDF Resmi">
+                            <i class="fa-solid fa-file-pdf" style="color:#ef4444"></i>
+                            <span>Buka PDF</span>
+                        </a>
+                        <a href="lampiran/surat-lamaran.pdf" download="Surat-Lamaran-Diyas-Nugraha.pdf" class="btn btn-sm btn-outline" title="Unduh File PDF">
+                            <i class="fa-solid fa-download"></i>
+                            <span>Unduh PDF</span>
+                        </a>
+                        <button onclick="printLampiranDocument()" class="btn btn-primary btn-sm btn-glow" title="Cetak Khusus Dokumen Lampiran">
+                            <i class="fa-solid fa-print"></i>
+                            <span>Cetak Dokumen</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Kontainer tampilan lembar dokumen -->
+                <div class="lampiran-sheet-container">
+                    <div class="lampiran-sheet-card">
+                        <img src="lampiran/surat-lamaran.jpg" alt="Lampiran Formal Diyas Nugraha - Head of NOC PT VTNET" class="lampiran-sheet-img" id="lampiranImg">
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="cv-footer print-hide">
+        <p>&copy; 2026 Pengajuan Lamaran Head of NOC (PT VTNET) &bull; <strong>Diyas</strong> | SMKN Batujaya</p>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toastMsg">Tautan berhasil disalin!</span>
+    </div>
+
+    <!-- Script JS -->
+    <script src="script.js"></script>
+</body>
+</html>
