@@ -1,8 +1,8 @@
 /* ==========================================================================
    ⚡ CV & LAMPIRAN SURAT HEAD OF NOC (PT VTNET) - DIYAS
    Theme: Awwwards / Vercel Modern Dark Tech
-   Features: Dual View (Lampiran + CV), Spotlight Glow, 3D Tilt,
-             Liquid Shimmer Bars, Dynamic Counters, Auto-Print Ready
+   Features: Multi View (CV + Kertas Putih + Dokumen Lampiran),
+             Spotlight Glow, 3D Tilt, Liquid Shimmer Bars, Dynamic Counters
    ========================================================================== */
 
 :root {
@@ -77,9 +77,7 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* ==========================================================================
-   AMBIENT BACKGROUND & CURSOR SPOTLIGHT
-   ========================================================================== */
+/* AMBIENT BACKGROUND & CURSOR SPOTLIGHT */
 .cursor-glow {
     position: fixed;
     width: 500px;
@@ -132,9 +130,7 @@ body {
     z-index: 1;
 }
 
-/* ==========================================================================
-   GLASS CARDS & SPOTLIGHT EFFECT
-   ========================================================================== */
+/* GLASS CARDS & SPOTLIGHT EFFECT */
 .glass-card {
     background: var(--bg-card);
     backdrop-filter: blur(20px);
@@ -195,9 +191,7 @@ body {
     z-index: 2;
 }
 
-/* ==========================================================================
-   TOP BAR (NAVIGATION)
-   ========================================================================== */
+/* TOP BAR (NAVIGATION) */
 .top-bar-wrapper {
     position: sticky;
     top: 1rem;
@@ -396,199 +390,7 @@ body.theme-light .nav-switch-tabs {
     transform: translateY(0);
 }
 
-/* ==========================================================================
-   SECTION 1: LAMPIRAN SURAT LAMARAN (PT VTNET - HEAD OF NOC)
-   ========================================================================== */
-.noc-target-banner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.8rem 2.2rem;
-    margin-bottom: 1.75rem;
-    background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.15), transparent 60%),
-                var(--bg-card);
-    border-left: 5px solid #10b981;
-}
-
-.company-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.45rem;
-    font-size: 0.8rem;
-    font-weight: 800;
-    color: #10b981;
-    background: rgba(16, 185, 129, 0.15);
-    border: 1px solid rgba(16, 185, 129, 0.4);
-    padding: 0.25rem 0.75rem;
-    border-radius: 9999px;
-    margin-bottom: 0.5rem;
-}
-
-.noc-target-banner h2 {
-    font-size: 1.6rem;
-    font-weight: 800;
-    margin-bottom: 0.35rem;
-}
-
-.target-desc {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    max-width: 650px;
-}
-
-.target-stats {
-    display: flex;
-    gap: 1rem;
-}
-
-.t-stat {
-    text-align: center;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid var(--border-color);
-    padding: 0.75rem 1.2rem;
-    border-radius: 14px;
-    min-width: 100px;
-}
-
-.t-val {
-    display: block;
-    font-size: 1.45rem;
-    font-weight: 800;
-    color: #10b981;
-    font-family: var(--font-mono);
-}
-
-.t-lbl {
-    font-size: 0.7rem;
-    color: var(--text-muted);
-    font-weight: 700;
-}
-
-/* Formal Paper (Lampiran Surat Resmi) */
-.formal-paper {
-    background: var(--paper-bg);
-    color: var(--paper-text);
-    padding: 3.5rem 4rem;
-    border-radius: 16px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
-    max-width: 950px;
-    margin: 0 auto;
-    font-size: 0.98rem;
-    line-height: 1.75;
-}
-
-.paper-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-}
-
-.sender-name {
-    font-size: 1.65rem;
-    font-weight: 800;
-    color: #0f172a;
-    letter-spacing: -0.02em;
-}
-
-.sender-sub {
-    font-size: 0.88rem;
-    font-weight: 600;
-    color: #475569;
-    margin-bottom: 0.4rem;
-}
-
-.sender-contact-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.25rem;
-    font-size: 0.84rem;
-    color: #64748b;
-}
-
-.sender-contact-row i {
-    color: #4f46e5;
-}
-
-.date-block {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #334155;
-}
-
-.paper-divider {
-    height: 2px;
-    background: linear-gradient(to right, #4f46e5, #10b981, #e2e8f0);
-    margin: 1.5rem 0 2rem 0;
-}
-
-.recipient-block {
-    margin-bottom: 1.75rem;
-    color: #1e293b;
-}
-
-.recipient-block p {
-    margin-bottom: 0.2rem;
-}
-
-.position-tag {
-    color: #4f46e5;
-    background: rgba(79, 70, 229, 0.1);
-    padding: 0.15rem 0.5rem;
-    border-radius: 6px;
-}
-
-.paper-body p {
-    margin-bottom: 1.25rem;
-    text-align: justify;
-    color: #334155;
-}
-
-.paper-bullet-list {
-    margin: 0 0 1.35rem 1.75rem;
-    color: #334155;
-    display: flex;
-    flex-direction: column;
-    gap: 0.65rem;
-}
-
-.paper-bullet-list li {
-    line-height: 1.65;
-}
-
-.paper-closing {
-    margin-top: 2.75rem;
-}
-
-.signature-box {
-    height: 75px;
-    display: flex;
-    align-items: center;
-}
-
-.signature-text {
-    font-family: var(--font-sign);
-    font-size: 2.8rem;
-    color: #312e81;
-    transform: rotate(-3deg);
-    display: inline-block;
-}
-
-.signature-name {
-    font-size: 1.05rem;
-    color: #0f172a;
-    letter-spacing: 0.02em;
-}
-
-.signature-role {
-    font-size: 0.84rem;
-    color: #64748b;
-}
-
-/* ==========================================================================
-   SECTION 2: CURRICULUM VITAE (PROFILE HERO & 2-COLUMN)
-   ========================================================================== */
+/* PROFILE HERO & CV SECTION */
 .profile-hero {
     display: flex;
     align-items: center;
@@ -651,15 +453,6 @@ body.theme-light .nav-switch-tabs {
 
 .avatar-wrapper:hover .avatar-img {
     transform: scale(1.08);
-}
-
-.float-icon {
-    animation: iconFloat 3.5s infinite ease-in-out;
-}
-
-@keyframes iconFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
 }
 
 .rank-badge {
@@ -1294,7 +1087,183 @@ body.theme-light .bar-bg {
 }
 
 /* ==========================================================================
-   LAMPIRAN IFRAME FRAME VIEWER
+   SECTION 2: LEMBAR SURAT KERTAS PUTIH FORMAL (A4 PAPER STYLE)
+   ========================================================================== */
+
+.paper-action-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.85rem 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 16px;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.paper-toolbar-info {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    flex-wrap: wrap;
+}
+
+.paper-type-badge, .paper-target-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    padding: 0.3rem 0.8rem;
+    border-radius: 9999px;
+}
+
+.paper-type-badge {
+    background: rgba(99, 102, 241, 0.15);
+    border: 1px solid rgba(99, 102, 241, 0.4);
+    color: var(--accent-primary);
+}
+
+.paper-target-badge {
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    color: var(--accent-net);
+}
+
+.formal-paper-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem 0 3rem 0;
+}
+
+.formal-paper {
+    background: #ffffff;
+    color: #1e293b;
+    padding: 4rem 4.5rem;
+    border-radius: 6px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    max-width: 900px;
+    width: 100%;
+    font-size: 0.98rem;
+    line-height: 1.75;
+    position: relative;
+    font-family: 'Plus Jakarta Sans', serif, sans-serif;
+}
+
+.paper-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.sender-name {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: 0.03em;
+}
+
+.sender-sub {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 0.45rem;
+}
+
+.sender-contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    font-size: 0.84rem;
+    color: #64748b;
+}
+
+.sender-contact-row i {
+    color: #4f46e5;
+}
+
+.date-block {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #334155;
+    text-align: right;
+}
+
+.paper-divider {
+    height: 2px;
+    background: linear-gradient(to right, #4f46e5, #10b981, #cbd5e1);
+    margin: 1.5rem 0 2rem 0;
+}
+
+.recipient-block {
+    margin-bottom: 1.75rem;
+    color: #1e293b;
+}
+
+.recipient-block p {
+    margin-bottom: 0.2rem;
+}
+
+.position-tag {
+    color: #4f46e5;
+    background: rgba(79, 70, 229, 0.1);
+    padding: 0.15rem 0.55rem;
+    border-radius: 6px;
+    font-weight: 700;
+}
+
+.paper-body p {
+    margin-bottom: 1.25rem;
+    text-align: justify;
+    color: #334155;
+}
+
+.paper-bullet-list {
+    margin: 0 0 1.35rem 1.75rem;
+    color: #334155;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.paper-bullet-list li {
+    line-height: 1.65;
+    text-align: justify;
+}
+
+.paper-closing {
+    margin-top: 2.75rem;
+}
+
+.signature-box {
+    height: 75px;
+    display: flex;
+    align-items: center;
+}
+
+.signature-text {
+    font-family: var(--font-sign);
+    font-size: 3rem;
+    color: #312e81;
+    transform: rotate(-3deg);
+    display: inline-block;
+}
+
+.signature-name {
+    font-size: 1.05rem;
+    color: #0f172a;
+    letter-spacing: 0.03em;
+}
+
+.signature-role {
+    font-size: 0.84rem;
+    color: #64748b;
+}
+
+/* ==========================================================================
+   SECTION 3: LAMPIRAN FRAME / IMAGE & PDF VIEWER
    ========================================================================== */
 
 .lampiran-frame-wrapper {
@@ -1307,7 +1276,6 @@ body.theme-light .bar-bg {
     position: relative;
 }
 
-/* Toolbar atas frame */
 .lampiran-toolbar {
     display: flex;
     justify-content: space-between;
@@ -1345,10 +1313,6 @@ body.theme-light .bar-bg {
     font-family: var(--font-mono);
 }
 
-.lamp-frame-badge i {
-    color: var(--accent-gold);
-}
-
 .lamp-frame-status {
     display: flex;
     align-items: center;
@@ -1358,13 +1322,6 @@ body.theme-light .bar-bg {
     font-weight: 700;
 }
 
-.icon-btn-sm {
-    width: 32px !important;
-    height: 32px !important;
-    font-size: 0.8rem;
-}
-
-/* Lampiran Sheet Document Viewer */
 .lampiran-sheet-container {
     padding: 2.5rem 1.5rem;
     display: flex;
@@ -1419,328 +1376,6 @@ body.theme-light .lampiran-sheet-container {
     transform: translateY(-2px);
 }
 
-/* ==========================================================================
-   LAMPIRAN WEB CARD STYLES (NEW — Replaces formal paper)
-   ========================================================================== */
-
-/* Grid layout for lampiran cards */
-.lampiran-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-/* Lampiran Header Card: Identitas Pelamar */
-.lampiran-header-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 2rem;
-    flex-wrap: wrap;
-    background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.14), transparent 65%),
-                var(--bg-card);
-    border-left: 5px solid var(--accent-primary);
-}
-
-.lamp-id-left {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.35rem;
-    flex: 1;
-}
-
-.lamp-avatar {
-    width: 60px;
-    height: 60px;
-    border-radius: 16px;
-    background: var(--accent-gradient);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.75rem;
-    color: #fff;
-    flex-shrink: 0;
-    box-shadow: 0 6px 18px rgba(99, 102, 241, 0.4);
-}
-
-.lamp-name {
-    font-size: 1.75rem;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    margin-bottom: 0.2rem;
-}
-
-.lamp-subtitle {
-    font-size: 0.84rem;
-    color: var(--text-secondary);
-    font-weight: 600;
-    margin-bottom: 0.6rem;
-}
-
-.lamp-contact-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    font-size: 0.82rem;
-    color: var(--text-muted);
-}
-
-.lamp-contact-row span {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-}
-
-.lamp-contact-row i {
-    color: var(--accent-primary);
-}
-
-.lamp-id-right {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    flex-shrink: 0;
-    min-width: 230px;
-}
-
-.lamp-meta-badge {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid var(--border-color);
-    padding: 0.65rem 1rem;
-    border-radius: 12px;
-    transition: var(--transition);
-}
-
-.lamp-meta-badge:hover {
-    background: rgba(99, 102, 241, 0.08);
-    border-color: var(--border-glow);
-}
-
-.lamp-meta-badge > i {
-    color: var(--accent-primary);
-    font-size: 1.1rem;
-    width: 20px;
-    text-align: center;
-}
-
-.lamp-meta-label {
-    display: block;
-    font-size: 0.7rem;
-    color: var(--text-muted);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-.lamp-meta-val {
-    display: block;
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: var(--text-primary);
-}
-
-/* Recipient Card */
-.lampiran-recipient-card {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.5rem;
-}
-
-.recipient-icon-wrap {
-    width: 50px;
-    height: 50px;
-    border-radius: 14px;
-    background: rgba(16, 185, 129, 0.16);
-    border: 1px solid rgba(16, 185, 129, 0.4);
-    color: var(--accent-net);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.4rem;
-    flex-shrink: 0;
-}
-
-.lamp-recipient-line {
-    font-size: 0.95rem;
-    margin-bottom: 0.2rem;
-    color: var(--text-primary);
-}
-
-.lamp-hal-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.55rem;
-    margin-top: 0.9rem;
-    background: rgba(99, 102, 241, 0.1);
-    border: 1px solid rgba(99, 102, 241, 0.3);
-    padding: 0.5rem 1rem;
-    border-radius: 10px;
-    font-size: 0.84rem;
-    color: var(--text-secondary);
-    line-height: 1.4;
-}
-
-.lamp-hal-badge i {
-    color: var(--accent-primary);
-    flex-shrink: 0;
-}
-
-/* Highlight inline text */
-.highlight-inline {
-    color: var(--accent-primary);
-    font-weight: 700;
-    background: rgba(99, 102, 241, 0.12);
-    padding: 0.1rem 0.4rem;
-    border-radius: 5px;
-}
-
-/* Qualification Row (3 cards side by side) */
-.lampiran-qual-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
-}
-
-.qual-card {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-}
-
-.qual-icon-wrap {
-    width: 48px;
-    height: 48px;
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.35rem;
-    flex-shrink: 0;
-}
-
-.qual-icon-wrap.color-net {
-    background: rgba(16, 185, 129, 0.16);
-    border: 1px solid rgba(16, 185, 129, 0.4);
-    color: var(--accent-net);
-}
-
-.qual-icon-wrap.color-ai {
-    background: rgba(56, 189, 248, 0.16);
-    border: 1px solid rgba(56, 189, 248, 0.4);
-    color: var(--accent-ai);
-}
-
-.qual-icon-wrap.color-lead {
-    background: rgba(168, 85, 247, 0.16);
-    border: 1px solid rgba(168, 85, 247, 0.4);
-    color: var(--accent-lead);
-}
-
-.qual-title {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: var(--text-primary);
-}
-
-.qual-desc {
-    font-size: 0.82rem;
-    color: var(--text-secondary);
-    line-height: 1.55;
-    flex: 1;
-}
-
-.qual-bar {
-    display: flex;
-    align-items: center;
-    gap: 0.65rem;
-    font-size: 0.78rem;
-    color: var(--accent-ai);
-    font-family: var(--font-mono);
-}
-
-.qual-bar .bar-bg {
-    flex: 1;
-}
-
-/* Body text in lampiran cards */
-.lamp-body-text {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    line-height: 1.7;
-    margin-bottom: 0.9rem;
-    text-align: justify;
-}
-
-.lamp-body-text:last-of-type {
-    margin-bottom: 0;
-}
-
-/* Penutup closing block */
-.lamp-closing {
-    margin-top: 1.75rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--border-color);
-}
-
-.lamp-salam {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    margin-bottom: 0.5rem;
-}
-
-.lamp-signature {
-    height: 65px;
-    display: flex;
-    align-items: center;
-}
-
-.lamp-sig-text {
-    font-family: var(--font-sign);
-    font-size: 2.6rem;
-    color: var(--accent-primary);
-    transform: rotate(-3deg);
-    display: inline-block;
-    text-shadow: 0 2px 10px rgba(99, 102, 241, 0.4);
-}
-
-.lamp-sig-name {
-    font-size: 1rem;
-    color: var(--text-primary);
-    letter-spacing: 0.03em;
-}
-
-.lamp-sig-role {
-    font-size: 0.82rem;
-    color: var(--text-muted);
-    margin-top: 0.1rem;
-}
-
-/* color-lead for qual-bar text */
-.color-lead { color: var(--accent-lead) !important; }
-
-/* Responsive for lampiran */
-@media (max-width: 900px) {
-    .lampiran-qual-row {
-        grid-template-columns: 1fr;
-    }
-
-    .lampiran-header-card {
-        flex-direction: column;
-    }
-
-    .lamp-id-right {
-        min-width: 100%;
-    }
-
-    .lampiran-recipient-card {
-        flex-direction: column;
-        gap: 1rem;
-    }
-}
-
 /* Footer & Toast */
 .cv-footer {
     text-align: center;
@@ -1789,14 +1424,8 @@ body.theme-light .lampiran-sheet-container {
         padding: 2rem;
     }
 
-    .noc-target-banner {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1.25rem;
-    }
-
     .formal-paper {
-        padding: 2rem 1.5rem;
+        padding: 2.5rem 1.75rem;
     }
 
     .tag-row, .contact-strip {
@@ -1835,12 +1464,17 @@ body.theme-light .lampiran-sheet-container {
     .mini-stat {
         min-width: 100px;
     }
+
+    .formal-paper {
+        padding: 1.75rem 1.25rem;
+    }
 }
 
 /* ==========================================================================
    PRINT STYLES (@media print)
-   Page 1: Lampiran Surat Lamaran PT VTNET (Head of NOC)
-   Page 2: Curriculum Vitae Lengkap (Diyas)
+   Page 1: Curriculum Vitae
+   Page 2: Lembar Kertas Putih Surat Lamaran
+   Page 3: Dokumen Lampiran Gambar/PDF
    ========================================================================== */
 @media print {
     body {
@@ -1848,6 +1482,8 @@ body.theme-light .lampiran-sheet-container {
         color: #000000 !important;
         font-size: 9.8pt !important;
         line-height: 1.42 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
     }
 
     .top-bar-wrapper,
@@ -1864,7 +1500,7 @@ body.theme-light .lampiran-sheet-container {
         display: none !important;
     }
 
-    /* Print both sections cleanly */
+    /* Print all sections cleanly */
     .tab-pane {
         display: block !important;
         opacity: 1 !important;
@@ -1876,6 +1512,14 @@ body.theme-light .lampiran-sheet-container {
         break-after: page !important;
     }
 
+    #tab-lampiran-kertas {
+        page-break-before: always !important;
+        break-before: page !important;
+        page-break-after: always !important;
+        break-after: page !important;
+        display: block !important;
+    }
+
     #tab-lampiran {
         page-break-before: always !important;
         break-before: page !important;
@@ -1885,48 +1529,39 @@ body.theme-light .lampiran-sheet-container {
         padding: 0 !important;
     }
 
-    .lampiran-toolbar {
-        display: none !important;
-    }
-
-    .lampiran-frame-wrapper {
-        border: none !important;
-        box-shadow: none !important;
-        background: transparent !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        overflow: visible !important;
-        min-height: auto !important;
-        display: block !important;
-    }
-
-    .lampiran-sheet-container {
-        padding: 0 !important;
-        margin: 0 !important;
-        background: transparent !important;
-        min-height: auto !important;
-        display: block !important;
-    }
-
-    .lampiran-sheet-card {
-        box-shadow: none !important;
-        border: none !important;
+    .cv-container {
         max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .formal-paper-wrapper {
+        padding: 0 !important;
+        margin: 0 !important;
+        display: block !important;
+    }
+
+    .formal-paper {
+        background: #ffffff !important;
+        color: #000000 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
         border-radius: 0 !important;
-        overflow: visible !important;
-        display: block !important;
-        background: transparent !important;
+        max-width: 100% !important;
+        font-size: 10pt !important;
+        line-height: 1.6 !important;
     }
 
-    .lampiran-sheet-img {
-        width: 100% !important;
-        max-width: 100% !important;
-        height: auto !important;
-        display: block !important;
-        page-break-inside: avoid !important;
-        break-inside: avoid !important;
-        -webkit-print-color-adjust: exact !important;
-        print-color-adjust: exact !important;
+    .sender-name {
+        color: #000000 !important;
+        font-size: 16pt !important;
+    }
+
+    .paper-divider {
+        background: #000000 !important;
+        height: 1px !important;
+        margin: 1rem 0 1.5rem 0 !important;
     }
 
     .glass-card {
@@ -1987,6 +1622,50 @@ body.theme-light .lampiran-sheet-container {
 
     .signature-text {
         color: #000000 !important;
+    }
+
+    .lampiran-toolbar {
+        display: none !important;
+    }
+
+    .lampiran-frame-wrapper {
+        border: none !important;
+        box-shadow: none !important;
+        background: transparent !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: visible !important;
+        min-height: auto !important;
+        display: block !important;
+    }
+
+    .lampiran-sheet-container {
+        padding: 0 !important;
+        margin: 0 !important;
+        background: transparent !important;
+        min-height: auto !important;
+        display: block !important;
+    }
+
+    .lampiran-sheet-card {
+        box-shadow: none !important;
+        border: none !important;
+        max-width: 100% !important;
+        border-radius: 0 !important;
+        overflow: visible !important;
+        display: block !important;
+        background: transparent !important;
+    }
+
+    .lampiran-sheet-img {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        display: block !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
     }
 
     @page {
