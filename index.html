@@ -37,9 +37,13 @@
                     <i class="fa-solid fa-id-card"></i>
                     <span>Curriculum Vitae</span>
                 </button>
+                <button class="nav-tab-btn" data-tab="tab-lampiran-kertas">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <span>Surat Lamaran (Resmi)</span>
+                </button>
                 <button class="nav-tab-btn" data-tab="tab-lampiran">
-                    <i class="fa-solid fa-file-signature"></i>
-                    <span>Lampiran</span>
+                    <i class="fa-solid fa-file-invoice"></i>
+                    <span>Dokumen Lampiran</span>
                 </button>
             </div>
 
@@ -347,7 +351,112 @@
         </section>
 
         <!-- =================================================================
-             SECTION 2: LAMPIRAN FORMAL (SURAT LAMARAN & CV DESAIN DIYAS)
+             SECTION 2: SURAT LAMARAN RESMI (LEMBAR KERTAS PUTIH FORMAL HEAD OF NOC)
+             ================================================================= -->
+        <section id="tab-lampiran-kertas" class="tab-pane">
+
+            <!-- Toolbar Surat Kertas -->
+            <div class="paper-action-toolbar glass-card print-hide">
+                <div class="paper-toolbar-info">
+                    <span class="paper-type-badge"><i class="fa-solid fa-file-contract"></i> Format: Lembar Kertas Putih A4</span>
+                    <span class="paper-target-badge"><i class="fa-solid fa-building"></i> Tujuan: PT VTNET &bull; Head of NOC</span>
+                </div>
+                <div class="paper-toolbar-buttons">
+                    <button onclick="printFormalPaper()" class="btn btn-primary btn-sm btn-glow" title="Cetak Lembar Surat Kertas A4">
+                        <i class="fa-solid fa-print"></i>
+                        <span>Cetak Surat Lamaran</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Lembar Resmi Kertas Putih -->
+            <div class="formal-paper-wrapper" id="formalPaperContainer">
+                <article class="formal-paper" id="letterPaper">
+                    <header class="paper-top">
+                        <div class="sender-block">
+                            <h2 class="sender-name">DIYAS NUGRAHA</h2>
+                            <p class="sender-sub">Spesialis Konfigurasi ONT &bull; AI Network Integration &bull; Eks Waka OSIS SMKN Batujaya</p>
+                            <div class="sender-contact-row">
+                                <span><i class="fa-solid fa-envelope"></i> diyasnugrahs@gmail.com</span>
+                                <span><i class="fa-solid fa-phone"></i> 081412146984</span>
+                                <span><i class="fa-solid fa-location-dot"></i> Batujaya, Karawang, Jawa Barat</span>
+                                <span><i class="fa-solid fa-school"></i> SMKN Batujaya</span>
+                            </div>
+                        </div>
+                        <div class="date-block" id="letterDate">
+                            <!-- Diisi tanggal otomatis oleh JavaScript -->
+                        </div>
+                    </header>
+
+                    <div class="paper-divider"></div>
+
+                    <div class="recipient-block">
+                        <p><strong>Hal:</strong> Lampiran Surat Lamaran Pekerjaan &ndash; <span class="position-tag">Head of NOC (Network Operations Center)</span></p>
+                        <br>
+                        <p>Kepada Yth.</p>
+                        <p><strong>HRD &amp; Manajemen Rekrutmen</strong></p>
+                        <p><strong>PT VTNET (PT VT Net)</strong></p>
+                        <p>di Tempat</p>
+                    </div>
+
+                    <div class="paper-body">
+                        <p>Dengan hormat,</p>
+                        
+                        <p>
+                            Sehubungan dengan informasi perkembangan dan ekspansi keandalan infrastruktur jaringan telekomunikasi yang dikembangkan oleh <strong>PT VTNET</strong>, melalui surat lampiran ini saya bermaksud untuk mengajukan diri guna mengisi posisi kepemimpinan teknis sebagai <strong>Head of NOC (Network Operations Center)</strong>.
+                        </p>
+
+                        <p>
+                            Saya adalah seorang praktisi muda berkarakter <strong>fast learner</strong>, sangat tanggap dalam menganalisis anomali sistem jaringan, serta memiliki prestasi akademik konsisten sebagai <strong>Juara / Ranking 1 berturut-turut di Semester 1 dan Semester 2 di SMKN Batujaya</strong>. Saya memiliki kompetensi praktis nyata dalam <strong>setting, konfigurasi, serta troubleshooting Optical Network Terminal (ONT)</strong> pada infrastruktur fiber optik, manajemen VLAN, bridge mode, PPPoE, serta penanganan gangguan transmisi data.
+                        </p>
+
+                        <p>
+                            Beberapa poin kualifikasi dan nilai strategis yang siap saya dedikasikan bagi operasional PT VTNET antara lain:
+                        </p>
+
+                        <ul class="paper-bullet-list">
+                            <li>
+                                <strong>Penguasaan Teknis Jaringan &amp; ONT:</strong> Terbiasa menangani instalasi, konfigurasi routing, bridge, serta troubleshooting perangkat terminal pelanggan (ONT) secara presisi guna memastikan distribusi bandwidth stabil dan minim hambatan.
+                            </li>
+                            <li>
+                                <strong>Penerapan AI untuk Otomasi Pemantauan Jaringan:</strong> Sebagai pemegang sertifikasi resmi <em>"Paham AI"</em> dan praktisi implementasi Local LLM, saya siap membangun alur deteksi anomali transmisi jaringan secara cerdas dan prediktif guna mempercepat respon insiden NOC.
+                            </li>
+                            <li>
+                                <strong>Kepemimpinan &amp; Manajemen Insiden Teruji:</strong> Berpengalaman sebagai Mantan Wakil Ketua OSIS SMKN Batujaya, memiliki kapasitas komunikasi publik yang solid, terlatih mengoordinasikan tim operasional lintas divisi, serta sigap mengambil keputusan taktis saat eskalasi krisis jaringan terjadi.
+                            </li>
+                            <li>
+                                <strong>Kalkulasi Taktis &amp; Problem Solving:</strong> Kemampuan berpikir beberapa langkah ke depan yang terasah melalui strategi catur kompetitif (Finalis Turnamen Catur SMKN Batujaya), esensial dalam memitigasi risiko *downtime* sistem.
+                            </li>
+                        </ul>
+
+                        <p>
+                            Saya memiliki ambisi 100% dan integritas tinggi untuk membawa divisi Network Operations Center di <strong>PT VTNET</strong> mencapai standar keandalan layanan tertinggi, responsif terhadap pelanggan, dan didukung operasional yang rapi dan terukur.
+                        </p>
+
+                        <p>
+                            Besar harapan saya untuk diberikan kesempatan menghadiri sesi wawancara atau uji kompetensi teknis agar saya dapat memaparkan rencana kerja serta kontribusi konkret yang siap saya hadirkan untuk kemajuan <strong>PT VTNET</strong>.
+                        </p>
+
+                        <p>
+                            Demikian surat lamaran ini saya sampaikan. Atas waktu, perhatian, dan kesempatan yang Bapak/Ibu berikan, saya mengucapkan terima kasih sebesar-besarnya.
+                        </p>
+                    </div>
+
+                    <footer class="paper-closing">
+                        <p>Hormat saya,</p>
+                        <div class="signature-box">
+                            <span class="signature-text">Diyas</span>
+                        </div>
+                        <p class="signature-name"><strong>DIYAS NUGRAHA</strong></p>
+                        <p class="signature-role">Kandidat Head of NOC &bull; SMKN Batujaya</p>
+                    </footer>
+                </article>
+            </div>
+
+        </section>
+
+        <!-- =================================================================
+             SECTION 3: LAMPIRAN FORMAL (SURAT LAMARAN & CV DESAIN DIYAS)
              ================================================================= -->
         <section id="tab-lampiran" class="tab-pane">
 
