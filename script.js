@@ -1,8 +1,8 @@
 /* ==========================================================================
    ⚡ CV & LAMPIRAN SURAT HEAD OF NOC (PT VTNET) - SCRIPT ENGINE
-   Features: Auto-Print, Dual View Tabs (Lampiran + CV), Dynamic Spotlight,
-             3D Tilt Physics, Interactive Particle Mesh, Number Counters,
-             Liquid Progress Fill, One-Click Email Copy & Toast Notification.
+   Features: Auto-Print, Multi View Tabs, Dynamic Spotlight, 3D Tilt,
+             Interactive Particle Mesh, Number Counters, Progress Fill,
+             One-Click Email Copy, Print Document Popup & Print Formal Paper.
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -15,13 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const options = { day: 'numeric', month: 'long', year: 'numeric' };
     const formattedDate = today.toLocaleDateString('id-ID', options);
     if (letterDateEl) {
-        letterDateEl.textContent = `Batujaya, ${formattedDate}`;
+        letterDateEl.innerHTML = `Batujaya, ${formattedDate}`;
     }
 
     // -------------------------------------------------------------------------
     // 2. AUTO PRINT (Otomatis Membuka Dialog Cetak / Simpan PDF)
     // -------------------------------------------------------------------------
-    // Memberikan jeda 1.2 detik agar semua font, ikon, dan styling dirender sempurna
     window.addEventListener('load', () => {
         setTimeout(() => {
             window.print();
@@ -29,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // -------------------------------------------------------------------------
-    // 2B. CETAK KHUSUS DOKUMEN LAMPIRAN (Surat Lamaran Full A4)
+    // 2B. CETAK KHUSUS DOKUMEN LAMPIRAN (Gambar/PDF A4)
     // -------------------------------------------------------------------------
     window.printLampiranDocument = function() {
         const imgUrl = 'lampiran/surat-lamaran.jpg';
@@ -82,7 +81,156 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // -------------------------------------------------------------------------
-    // 3. TAB SWITCHER (Lampiran Surat PT VTNET <-> Curriculum Vitae)
+    // 2C. CETAK KHUSUS LEMBAR KERTAS PUTIH FORMAL (A4)
+    // -------------------------------------------------------------------------
+    window.printFormalPaper = function() {
+        const paperElement = document.getElementById('letterPaper');
+        if (!paperElement) {
+            window.print();
+            return;
+        }
+
+        const printWindow = window.open('', '_blank');
+        if (!printWindow) {
+            window.print();
+            return;
+        }
+
+        const paperHtml = paperElement.outerHTML;
+
+        printWindow.document.write(`<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Surat Lamaran Pekerjaan - Diyas Nugraha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 15mm 20mm;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', serif, sans-serif;
+            background: #ffffff;
+            color: #1e293b;
+            font-size: 10pt;
+            line-height: 1.7;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .formal-paper {
+            background: #ffffff;
+            width: 100%;
+        }
+        .paper-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        .sender-name {
+            font-size: 18pt;
+            font-weight: 800;
+            color: #0f172a;
+            letter-spacing: 0.02em;
+        }
+        .sender-sub {
+            font-size: 9pt;
+            font-weight: 600;
+            color: #475569;
+            margin-bottom: 0.4rem;
+        }
+        .sender-contact-row {
+            display: flex;
+            gap: 1.25rem;
+            font-size: 8.5pt;
+            color: #64748b;
+        }
+        .date-block {
+            font-size: 9.5pt;
+            font-weight: 600;
+            color: #334155;
+            text-align: right;
+        }
+        .paper-divider {
+            height: 1.5px;
+            background: #0f172a;
+            margin: 1rem 0 1.5rem 0;
+        }
+        .recipient-block {
+            margin-bottom: 1.5rem;
+            color: #1e293b;
+            font-size: 10pt;
+        }
+        .recipient-block p {
+            margin-bottom: 0.2rem;
+        }
+        .position-tag {
+            font-weight: 700;
+            color: #1e3a8a;
+        }
+        .paper-body p {
+            margin-bottom: 1.15rem;
+            text-align: justify;
+            color: #334155;
+        }
+        .paper-bullet-list {
+            margin: 0 0 1.25rem 1.75rem;
+            color: #334155;
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+        }
+        .paper-bullet-list li {
+            text-align: justify;
+        }
+        .paper-closing {
+            margin-top: 2rem;
+        }
+        .signature-box {
+            height: 60px;
+            display: flex;
+            align-items: center;
+        }
+        .signature-text {
+            font-family: 'Caveat', cursive, sans-serif;
+            font-size: 32pt;
+            color: #1e3a8a;
+            transform: rotate(-3deg);
+            display: inline-block;
+        }
+        .signature-name {
+            font-size: 11pt;
+            font-weight: 700;
+            color: #0f172a;
+        }
+        .signature-role {
+            font-size: 9pt;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+    ${paperHtml}
+    <script>
+        setTimeout(() => {
+            window.print();
+        }, 350);
+    </script>
+</body>
+</html>`);
+        printWindow.document.close();
+    };
+
+    // -------------------------------------------------------------------------
+    // 3. TAB SWITCHER (CV <-> Surat Lamaran Kertas Putih <-> Dokumen Lampiran)
     // -------------------------------------------------------------------------
     const tabButtons = document.querySelectorAll('.nav-tab-btn');
     const tabPanes = document.querySelectorAll('.tab-pane');
@@ -146,7 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCursorGlow();
 
     // -------------------------------------------------------------------------
-    // 6. CARD SPOTLIGHT EFFECT (Coordinates per card)
+    // 6. CARD SPOTLIGHT EFFECT
     // -------------------------------------------------------------------------
     const spotlightCards = document.querySelectorAll('.spotlight-card');
     spotlightCards.forEach(card => {
